@@ -7,18 +7,18 @@ const isAndroid = Platform.OS === "android";
 
 const List = styled.View`
   flex: 1;
-  padding: 16px;
+  padding: ${(props) => props.theme.space[3]};
   background-color: blue;
 `;
 
 const Search = styled.View`
-  padding: 16px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const SearchBar = styled(Searchbar)`
   min-height: 0;
   border-bottom-width: 0;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 const SafeArea = styled.SafeAreaView`
