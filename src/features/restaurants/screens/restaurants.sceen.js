@@ -8,7 +8,6 @@ const isAndroid = Platform.OS === "android";
 const List = styled.View`
   flex: 1;
   padding: ${(props) => props.theme.space[3]};
-  background-color: blue;
 `;
 
 const Search = styled.View`
@@ -23,7 +22,7 @@ const SearchBar = styled(Searchbar)`
 
 const SafeArea = styled.SafeAreaView`
   flex: 1;
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}`};
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
 export const RestaurantsScreen = () => {
@@ -35,7 +34,7 @@ export const RestaurantsScreen = () => {
           placeholder="Search"
           mode={isAndroid ? "view" : "bar"}
           showDivider={false}
-          elevation={2}
+          elevation={1}
         />
       </Search>
       <List>
