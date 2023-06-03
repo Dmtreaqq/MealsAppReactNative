@@ -1,0 +1,7 @@
+{
+    "extends": "@react-native-community",
+    "rules": {
+        "quotes": [2, "double"],
+        "react/react-in-jsx-scope": "off"
+    }
+}
