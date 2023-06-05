@@ -1,6 +1,6 @@
 export const fonts = {
-  heading: "AlegreyaSansSC_400Regular",
-  body: "Lato_400Regular",
+  heading: "Lato_400Regular",
+  body: "AlegreyaSansSC_400Regular",
   monospace: "Oswald_400Regular",
 };
 
