@@ -16,8 +16,7 @@ export const Address = styled.Text`
 `;
 
 export const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-  background-color: white;
+  margin: ${(props) => props.theme.space[3]};
 `;
 
 export const Rating = styled.View`
