@@ -11,4 +11,5 @@ export const theme = {
   fontSizes,
   fontWeights,
   lineHeights,
+  roundness: 0,
 };
