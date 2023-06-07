@@ -1,8 +1,10 @@
 import { StyleSheet, StatusBar, Platform, FlatList } from "react-native";
-import { Searchbar } from "react-native-paper";
+import { useContext } from "react";
+import { Searchbar, ActivityIndicator } from "react-native-paper";
 import styled from "styled-components/native";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 const isAndroid = Platform.OS === "android";
 
@@ -28,6 +30,8 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const RestaurantsScreen = () => {
+  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+
   return (
     <SafeArea>
       <Search>
@@ -39,24 +43,12 @@ export const RestaurantsScreen = () => {
           elevation={1}
         />
       </Search>
+      {isLoading && <ActivityIndicator animating={true} size="medium" />}
       <RestaurantList
-        data={[
-          { name: 1 },
-          { name: 2 },
-          { name: 3 },
-          { name: 4 },
-          { name: 5 },
-          { name: 6 },
-          { name: 7 },
-          { name: 8 },
-          { name: 9 },
-          { name: 10 },
-          { name: 11 },
-          { name: 12 },
-        ]}
-        renderItem={() => (
+        data={restaurants}
+        renderItem={({ item }) => (
           <Spacer position="bottom" size="large">
-            <RestaurantInfoCard />
+            <RestaurantInfoCard restaurant={item} />
           </Spacer>
         )}
         keyExtractor={(item) => item.name}
